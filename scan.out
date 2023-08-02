@@ -1,0 +1,13 @@
+BSSID               Ch  dBm  WPS  Lck  Vendor    ESSID
+--------------------------------------------------------------------------------
+CC:2D:21:B6:19:68    1  -83            RealtekS  Everest_B61968
+AC:15:A2:C4:1D:18    3  -78  2.0  No   RalinkTe  T A Y F A 
+AE:15:A2:C4:1D:18    3  -78            RalinkTe  (null)
+AE:15:A2:D4:1D:18    3  -78            RalinkTe  (null)
+D4:72:26:6D:15:09    6  -89  2.0  No   AtherosC  Superbox_Wifi_2896
+C4:27:28:69:AC:F8    8  -92  2.0  No   Unknown   SUPERONLINE_Wi-Fi_4301
+20:08:89:72:FF:A6    9  -61  2.0  No   Unknown   \\xc4\\xb0LKER KAPTAN
+98:0D:67:AD:C6:6F   11  -88  2.0  No   RealtekS  Villa_Beach_2
+90:EF:68:98:78:69   11  -84  1.0  No   Broadcom  ozlem
+40:3F:8C:BC:C2:10   11  -87  2.0  No   RalinkTe  Villa_Beach_2.4GHz
+42:3F:8C:DC:C2:10   11  -88            RalinkTe  (null)
