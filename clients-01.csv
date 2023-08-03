@@ -1,7 +1,9 @@
 
 BSSID, First time seen, Last time seen, channel, Speed, Privacy, Cipher, Authentication, Power, # beacons, # IV, LAN IP, ID-length, ESSID, Key
-C0:94:AD:88:88:FB, 2023-08-02 20:49:20, 2023-08-02 20:49:36,  1, 130, WPA2, CCMP, PSK, -76,        7,        0,   0.  0.  0.  0,  11, HALİKARNAS, 
+C0:94:AD:88:88:FB, 2023-08-03 14:04:35, 2023-08-03 14:04:42,  5,  -1, WPA, ,   ,  -1,        0,        5,   0.  0.  0.  0,   0, , 
 
 Station MAC, First time seen, Last time seen, Power, # packets, BSSID, Probed ESSIDs
-96:36:A4:79:28:67, 2023-08-02 20:49:20, 2023-08-02 20:49:36, -77,      456, C0:94:AD:88:88:FB,
+0C:E0:DC:FC:E0:91, 2023-08-03 14:04:35, 2023-08-03 14:04:42, -80,      187, C0:94:AD:88:88:FB,
+1C:CC:D6:06:8E:FA, 2023-08-03 14:04:36, 2023-08-03 14:04:42, -83,       64, C0:94:AD:88:88:FB,
+96:8D:60:CA:35:DB, 2023-08-03 14:04:40, 2023-08-03 14:04:41, -84,        3, C0:94:AD:88:88:FB,
 

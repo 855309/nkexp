@@ -24,7 +24,7 @@ update_clients () {
         fi
     done < $cl_list
 
-    printf "${clients[@]}" > "$cl_pure"
+    echo "${clients[@]}" > "$cl_pure"
 }
 
 main () {

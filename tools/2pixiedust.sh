@@ -16,7 +16,7 @@ s_info () {
 
 start () {
     # ...
-    printf "Started attack to ${bold]${bssid}${tdef}.\n"
+    printf "Started attack to ${bold}${bssid}${tdef}.\n"
 }
 
 main () {
@@ -36,7 +36,7 @@ main () {
         shift
     done
 
-    if [ $bssid = "null" ]
+    if [[  $bssid = "null" || $bssid = "[null]" ]]
     then
         printf "BSSID not found.\n"
         exit 0

