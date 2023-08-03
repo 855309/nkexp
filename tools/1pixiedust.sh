@@ -16,7 +16,7 @@ s_info () {
 
 start () {
     # ...
-    printf "Started attack to ${bssid}"
+    printf "Started attack to ${bold]${bssid}${tdef}.\n"
 }
 
 main () {
