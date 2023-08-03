@@ -2,3 +2,4 @@ clients.txt
 *.csv
 *.cap
 *.out
+tst.sh
