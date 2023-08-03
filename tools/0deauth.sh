@@ -11,7 +11,6 @@ tdef=$(tput sgr0)
 bssid="null"
 ch="null"
 iface="null"
-capture="false"
 
 declare -a clients
 
@@ -72,9 +71,6 @@ main () {
         elif [ $1 = "--iface" ]
         then
             iface="$2"
-        elif [ $1 = "--capture" ]
-        then
-            capture="$2"
         fi
 
         shift

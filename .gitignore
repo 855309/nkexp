@@ -1,4 +1,4 @@
 clients.txt
-scan.out
-clients-01.csv
-clients-01.cap
+*.csv
+*.cap
+*.out

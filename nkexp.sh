@@ -45,7 +45,7 @@ ap_scanner () {
     scfile="scan.out"
     [ -e "$scfile" ] && rm -f $scfile
 
-    xterm -fg white -bg black -e "wash -i ${interface} -aF | tee ${scfile}" &> /dev/null &
+    xterm -fg white -bg black -e "wash -i ${interface} -aUF | tee ${scfile}" &> /dev/null &
     xtpid=$!
 
     read -p "Press Return when you see the target network.  "
