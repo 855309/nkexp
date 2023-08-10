@@ -35,12 +35,12 @@ start () {
 
     sleep "$tmout"
 
-    killall attack-loop.sh
-    killall client-loop.sh
-    killall xterm
+    killall attack-loop.sh &> /dev/null
+    killall client-loop.sh &> /dev/null
+    killall xterm &> /dev/null
 
     enf="$(aircrack-ng clients-01.cap | grep -E -o "[0-9]+ handshake" | grep -E -o "[0-9]+")"
-    if [[ "$enf" != "0" || "$enf" != "" ]]
+    if [[ "$enf" != "0" && "$enf" != "" ]]
     then
         defpth="/tmp/handshake.cap"
         printf "Handshake captured! Save .cap file to [Default: ${bold}${defpth}${tdef}]:\n"
